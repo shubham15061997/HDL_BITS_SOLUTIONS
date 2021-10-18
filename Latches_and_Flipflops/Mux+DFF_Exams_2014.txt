@@ -1,0 +1,14 @@
+module top_module (
+    input clk,
+    input w, R, E, L,
+    output Q
+);
+    wire X1,X2;
+    
+    assign X1=E?w:Q;
+    assign X2=L?R:X1;
+    always@(posedge clk)begin
+        Q<=X2;
+    end
+
+endmodule

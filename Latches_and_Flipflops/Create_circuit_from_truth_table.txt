@@ -1,0 +1,17 @@
+module top_module (
+    input clk,
+    input j,
+    input k,
+    output Q);
+    wire w1,w2,w3;
+    
+    and g1(w1,j,(~Q));
+    and g2(w2,~(k),Q);
+    or  g3(w3,w1,w2);
+    
+    always@(posedge clk)begin
+        Q<=w3;
+    end
+    
+
+endmodule
